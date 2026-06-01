@@ -2,104 +2,127 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
 }
 
 body{
-background:#0f172a;
+background:#090909;
 color:white;
+font-family:Arial,sans-serif;
 overflow-x:hidden;
 }
 
-#stars{
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(white 1px, transparent 1px);
-background-size:40px 40px;
-opacity:.25;
-z-index:-1;
-}
-
-.hero,
-.section,
-.ending{
-min-height:100vh;
+.hero{
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:40px;
 text-align:center;
+padding:20px;
 }
 
-.gift-box{
-font-size:120px;
-cursor:pointer;
-animation:float 2s infinite;
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
 }
 
-@keyframes float{
-50%{
-transform:translateY(-15px);
-}
+.subtitle{
+max-width:600px;
+line-height:1.8;
 }
 
 button{
-padding:15px 30px;
+padding:15px 25px;
 border:none;
-border-radius:30px;
+border-radius:50px;
+margin-top:25px;
 cursor:pointer;
-margin-top:20px;
-font-size:16px;
+font-size:1rem;
 }
 
 .hidden{
 display:none;
 }
 
-#storyText{
-max-width:700px;
-font-size:1.4rem;
+.typing-container{
+padding:40px;
+text-align:center;
+font-size:1.3rem;
 line-height:2;
 }
 
-.polaroid-gallery{
+.counter-section{
+padding:100px 20px;
+text-align:center;
+}
+
+#counter-love{
+font-size:2.2rem;
+font-weight:bold;
+}
+
+.gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+padding:30px;
+}
+
+.gallery img{
 width:100%;
-max-width:1200px;
-}
-
-.card{
-background:white;
-color:black;
-padding:10px;
-border-radius:10px;
-transform:rotate(-2deg);
-}
-
-.card img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-#letter{
-max-width:850px;
-line-height:2;
-font-size:1.2rem;
-}
-
-.ending img{
-width:300px;
 border-radius:20px;
-margin-bottom:20px;
+cursor:pointer;
+transition:.4s;
 }
 
-.ending h1{
-font-family:"Great Vibes",cursive;
-font-size:4rem;
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.love-letter{
+padding:50px 30px;
+line-height:2;
+text-align:center;
+}
+
+.ending{
+padding:120px 30px;
+text-align:center;
+}
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#lightbox img{
+max-width:95%;
+max-height:95%;
+border-radius:20px;
+}
+
+.heart{
+position:fixed;
+font-size:25px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px);
+}
+
+100%{
+transform:translateY(110vh);
+}
+
 }
