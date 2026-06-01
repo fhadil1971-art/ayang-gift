@@ -1,200 +1,117 @@
-const openBtn = document.getElementById("openBtn");
-const music = document.getElementById("bgMusic");
+const storyText = `
 
-openBtn.addEventListener("click",()=>{
+Hai Manis...
 
-music.play();
+Aku masih ingat saat pertama kali kita bertemu.
 
-document.querySelectorAll(".hidden")
-.forEach(item=>item.style.display="flex");
+Awalnya hanya dua orang asing yang dipertemukan oleh Roblox.
 
-window.scrollTo({
-top:window.innerHeight,
-behavior:"smooth"
-});
+Tidak ada yang menyangka cerita itu akan membawa kita sejauh ini.
 
-showStory();
-showLetter();
+Termasuk aku.
 
-});
+Seiring berjalannya waktu...
 
-const storyLines = [
+Aku mulai menunggumu online.
 
-"Siapa sangka...",
+Mulai mencari namamu.
 
-"Dari sebuah game Roblox...",
+Mulai merasa ada yang kurang ketika hari berlalu tanpa kabarmu.
 
-"Aku menemukan seseorang yang begitu berarti.",
+Dan tanpa sadar...
 
-"Awalnya kita hanya teman satu grup.",
-
-"Tidak ada yang tahu kalau semuanya akan berubah.",
-
-"Aku mulai menunggu pesanmu.",
-
-"Aku mulai senang ketika berbicara denganmu.",
-
-"Dan tanpa sadar...",
-
-"Aku jatuh cinta kepada kamu ❤️"
-
-];
-
-function showStory(){
-
-let i=0;
-
-const area=document.getElementById("storyText");
-
-function next(){
-
-if(i<storyLines.length){
-
-area.innerHTML += storyLines[i]+"<br><br>";
-
-i++;
-
-setTimeout(next,1800);
-
-}
-
-}
-
-next();
-
-}
-
-const letter = `
-
-Hai Ayang ❤️
-
-Kalau ada yang bilang pertemuan paling indah selalu terjadi di tempat yang istimewa...
-
-Mungkin cerita kita berbeda.
-
-Karena siapa sangka...
-
-Dari Roblox...
-
-Aku bisa menemukan seseorang yang akhirnya menjadi begitu berarti.
-
-Awalnya kita hanya teman.
-
-Hanya seseorang yang hadir dalam hari-hariku.
-
-Tapi semakin lama aku mengenalmu...
-
-Semakin aku sadar bahwa ada sesuatu yang berbeda.
-
-Aku menunggu pesanmu.
-
-Aku senang saat bisa mengobrol denganmu.
-
-Aku tersenyum saat melihat namamu muncul.
-
-Dan perlahan...
-
-Perasaan itu tumbuh.
-
-Sampai akhirnya aku sadar...
-
-Aku sangat menyayangimu.
-
-Terima kasih sudah hadir dalam hidupku.
-
-Terima kasih sudah menjadi alasan banyak senyumku.
-
-Aku tidak tahu bagaimana masa depan akan berjalan.
-
-Tapi aku tahu satu hal.
-
-Hari ini.
-
-Besok.
-
-Dan selama aku masih bisa.
-
-Aku akan terus memilih kamu.
-
-Karena dari jutaan orang di dunia ini...
-
-Hatiku memilih Manis.
-
-Aku sayang kamu ❤️
-
-- Fhadil
+Aku jatuh cinta.
 
 `;
 
-function showLetter(){
+const textTarget = document.getElementById("typingText");
 
-let i=0;
+let i = 0;
 
-const target=document.getElementById("letter");
+function typeWriter(){
 
-function typing(){
+if(i < storyText.length){
 
-if(i<letter.length){
-
-target.innerHTML += letter.charAt(i);
+textTarget.innerHTML += storyText.charAt(i);
 
 i++;
 
-setTimeout(typing,35);
+setTimeout(typeWriter,40);
 
 }
 
 }
 
-typing();
+document.getElementById("startBtn").onclick = ()=>{
+
+document.getElementById("music").play();
+
+document.getElementById("story").classList.remove("hidden");
+
+typeWriter();
+
+};
+
+let day = 1;
+
+const counter = document.getElementById("counter-love");
+
+const timer = setInterval(()=>{
+
+counter.innerHTML = `❤️ Hari ke-${day}`;
+
+day += 3;
+
+if(day >= 210){
+
+clearInterval(timer);
+
+counter.innerHTML = `
+<h1>❤️ 7 BULAN ❤️</h1>
+<p>Fhadil & Manis</p>
+`;
 
 }
 
-document.getElementById("hugBtn")
-.addEventListener("click",()=>{
+},35);
 
-document.getElementById("hugMessage").innerHTML=
+function openImage(src){
 
-"<h2>🤗 Aku Sayang Kamu, Ayang ❤️</h2>";
+document.getElementById("lightbox").style.display="flex";
 
-});
+document.getElementById("lightbox-img").src=src;
 
-setInterval(()=>{
+}
+
+function closeImage(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+function createHearts(){
+
+for(let i=0;i<50;i++){
 
 const heart=document.createElement("div");
 
-heart.innerHTML="❤️";
+heart.className="heart";
 
-heart.style.position="fixed";
+heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.top="-20px";
-
-heart.style.fontSize=(Math.random()*20+15)+"px";
-
-heart.style.pointerEvents="none";
-
-heart.style.zIndex="999";
+heart.style.animationDuration=
+(Math.random()*3+2)+"s";
 
 document.body.appendChild(heart);
 
-let y=-20;
-
-const anim=setInterval(()=>{
-
-y+=4;
-
-heart.style.top=y+"px";
-
-if(y>window.innerHeight){
-
-clearInterval(anim);
+setTimeout(()=>{
 
 heart.remove();
 
+},5000);
+
 }
 
-},20);
-
-},500);
+}
