@@ -43,7 +43,6 @@ setTimeout(typeWriter,40);
 }
 
 document.getElementById("startBtn").onclick = ()=>{
-document.getElementById("startBtn").onclick = ()=>{
 
 document.getElementById("music").play();
 
@@ -63,14 +62,6 @@ document.getElementById("story")
 typeWriter();
 
 },1500);
-
-};
-
-document.getElementById("music").play();
-
-document.getElementById("story").classList.remove("hidden");
-
-typeWriter();
 
 };
 
