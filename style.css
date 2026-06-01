@@ -125,7 +125,9 @@ border-radius:20px;
 .heart{
 position:fixed;
 font-size:25px;
-animation:fall 5s linear infinite;
+z-index:99999;
+pointer-events:none;
+animation:fall 5s linear;
 }
 
 @keyframes fall{
