@@ -77,7 +77,7 @@ day += 3;
 
 if(day >= 210){
 
-clearInterval(timer);
+const timer = setInterval(()=>{
 
 counter.innerHTML = `
 <h1>❤️ 7 BULAN ❤️</h1>
