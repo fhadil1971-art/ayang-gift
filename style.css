@@ -19,12 +19,18 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#090909;
+z-index:999;
+transition:1.5s;
 }
 
-.hero h1{
-font-size:3rem;
-margin-bottom:20px;
+.hero.hide{
+opacity:0;
+pointer-events:none;
 }
 
 .subtitle{
@@ -124,10 +130,11 @@ border-radius:20px;
 
 .heart{
 position:fixed;
+top:-50px;
 font-size:25px;
 z-index:99999;
 pointer-events:none;
-animation:fall 5s linear;
+animation:fall linear forwards;
 }
 
 @keyframes fall{
