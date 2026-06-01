@@ -64,16 +64,36 @@ typeWriter();
 },1500);
 
 };
+function typeWriter(){
+
+if(i < storyText.length){
+
+textTarget.innerHTML += storyText.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,40);
+
+}else{
+
+document.getElementById("journeyBtn")
+.style.display="inline-block";
+
+}
+
+}
+let day = 1;
+const counter = document.getElementById("counter-love");
+
+document.getElementById("journeyBtn").onclick = ()=>{
 
 let day = 1;
-
-const counter = document.getElementById("counter-love");
 
 const timer = setInterval(()=>{
 
 counter.innerHTML = `❤️ Hari ke-${day}`;
 
-day += 3;
+day += 2;
 
 if(day >= 210){
 
@@ -84,9 +104,13 @@ counter.innerHTML = `
 <p>Fhadil ❤️ Manis</p>
 `;
 
+createHearts();
+
 }
 
-},35);
+},40);
+
+};
 
 function openImage(src){
 
