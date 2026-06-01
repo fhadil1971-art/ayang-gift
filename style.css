@@ -234,3 +234,8 @@ transform:translateY(0);
 .ending{
 display:none;
 }
+
+#journeyBtn{
+display:none;
+margin-top:20px;
+}
