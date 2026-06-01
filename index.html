@@ -3,116 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Untuk Manis ❤️</title>
+
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-<audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
 
 <div id="stars"></div>
 
 <section class="hero">
 
-    <div class="gift-box" id="gift">
-        🎁
-    </div>
+<h1>Untuk Manis ❤️</h1>
 
-    <h1>Untuk Manis ❤️</h1>
+<p class="subtitle">
+Dari seseorang yang bertemu denganmu di Roblox...
+dan tidak pernah menyangka akan menyayangimu sedalam ini.
+</p>
 
-    <p>Dari Fhadil</p>
-
-    <button id="openBtn">
-        Buka Kadomu ✨
-    </button>
-
-</section>
-
-<section class="hidden section" id="story">
-
-<h2>Cerita Kita 🎮</h2>
-
-<div id="storyText"></div>
+<button id="startBtn">
+🎁 Buka Hadiah
+</button>
 
 </section>
 
-<section class="hidden section">
+<section id="story" class="hidden">
 
-<h2>Kenangan Kita 📸</h2>
-
-<div class="polaroid-gallery">
-
-<div class="card">
-<img src="foto1.jpg">
-<p>Senyum yang selalu aku suka.</p>
-</div>
-
-<div class="card">
-<img src="foto2.jpg">
-<p>Kenangan yang tidak ingin aku lupakan.</p>
-</div>
-
-<div class="card">
-<img src="foto3.jpg">
-<p>Perjalanan kecil kita.</p>
-</div>
-
-<div class="card">
-<img src="foto4.jpg">
-<p>Bahagia sesederhana ini.</p>
-</div>
-
-<div class="card">
-<img src="foto5.jpg">
-<p>Aku bersyukur bertemu kamu.</p>
-</div>
-
-<div class="card">
-<img src="foto6.jpg">
-<p>Terima kasih sudah hadir.</p>
-</div>
-
-<div class="card">
-<img src="foto7.jpg">
-<p>Tempat favoritku adalah di sampingmu.</p>
-</div>
-
-<div class="card">
-<img src="foto8.jpg">
-<p>Dan semoga tetap begitu.</p>
-</div>
-
+<div class="typing-container">
+<p id="typingText"></p>
 </div>
 
 </section>
 
-<section class="hidden section">
+<section class="counter-section">
 
-<h2>💌 Surat Untuk Ayang</h2>
-
-<div id="letter"></div>
+<div id="counter-love">
+❤️ Hari ke-1
+</div>
 
 </section>
 
-<section class="hidden ending">
+<section class="gallery">
 
-<img src="foto8.jpg">
+<img src="images/foto1.jpg" onclick="openImage(this.src)">
+<img src="images/foto2.jpg" onclick="openImage(this.src)">
+<img src="images/foto3.jpg" onclick="openImage(this.src)">
+<img src="images/foto4.jpg" onclick="openImage(this.src)">
+<img src="images/foto5.jpg" onclick="openImage(this.src)">
+<img src="images/foto6.jpg" onclick="openImage(this.src)">
+<img src="images/foto7.jpg" onclick="openImage(this.src)">
+<img src="images/foto8.jpg" onclick="openImage(this.src)">
+
+</section>
+
+<section class="love-letter">
+
+<h2>Untuk Kamu ❤️</h2>
+
+<p>
+
+Orang sering bertanya...
+
+Apa yang membuatku menyukaimu?
+
+Awalnya aku mencoba mencari jawabannya.
+
+Mungkin karena senyummu.
+
+Mungkin karena tawamu.
+
+Mungkin karena caramu membuat hariku lebih baik.
+
+Tapi semakin lama aku berpikir...
+
+Aku sadar aku tidak menyukai satu bagian darimu.
+
+Aku menyukai semuanya.
+
+Aku menyukai saat kamu bahagia.
+
+Aku menyukai saat kamu manja.
+
+Aku menyukai saat kamu bercanda.
+
+Aku menyukai saat kamu kesal.
+
+Aku menyukai semua versi dirimu.
+
+Karena bagiku...
+
+Manis tidak perlu menjadi sempurna untuk dicintai.
+
+Aku mencintaimu karena kamu adalah dirimu sendiri.
+
+❤️
+
+</p>
+
+</section>
+
+<section class="ending">
 
 <h1>Fhadil ❤️ Manis</h1>
 
-<p>Since 01</p>
+<p>
 
-<button id="hugBtn">
-🤍 Peluk Virtual
+7 Bulan Bersama
+
+Terima kasih karena telah menjadi bagian terindah dalam hidupku.
+
+Dari semua kebetulan yang pernah terjadi...
+
+Bertemu denganmu adalah favoritku.
+
+Aku mencintaimu.
+
+Hari ini.
+
+Besok.
+
+Dan seterusnya.
+
+</p>
+
+<button onclick="createHearts()">
+❤️ Klik Aku
 </button>
 
-<div id="hugMessage"></div>
-
 </section>
+
+<div id="lightbox" onclick="closeImage()">
+<img id="lightbox-img">
+</div>
+
+<audio id="music" loop>
+<source src="music.mp3">
+</audio>
 
 <script src="script.js"></script>
 
