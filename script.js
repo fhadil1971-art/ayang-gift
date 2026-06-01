@@ -43,13 +43,19 @@ setTimeout(typeWriter,40);
 }
 
 document.getElementById("startBtn").onclick = ()=>{
+document.getElementById("startBtn").onclick = ()=>{
 
 document.getElementById("music").play();
 
-document.querySelector(".hero")
-.classList.add("hide");
+document.querySelector(".hero").classList.add("hide");
 
 setTimeout(()=>{
+
+document.getElementById("story").style.display="block";
+document.querySelector(".counter-section").style.display="block";
+document.querySelector(".slider").style.display="flex";
+document.querySelector(".love-letter").style.display="block";
+document.querySelector(".ending").style.display="block";
 
 document.getElementById("story")
 .classList.remove("hidden");
