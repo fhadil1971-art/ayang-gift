@@ -46,6 +46,22 @@ document.getElementById("startBtn").onclick = ()=>{
 
 document.getElementById("music").play();
 
+document.querySelector(".hero")
+.classList.add("hide");
+
+setTimeout(()=>{
+
+document.getElementById("story")
+.classList.remove("hidden");
+
+typeWriter();
+
+},1500);
+
+};
+
+document.getElementById("music").play();
+
 document.getElementById("story").classList.remove("hidden");
 
 typeWriter();
@@ -91,25 +107,23 @@ document.getElementById("lightbox").style.display="none";
 
 function createHearts(){
 
-for(let i=0;i<50;i++){
+for(let i=0;i<80;i++){
 
-const heart=document.createElement("div");
+const heart = document.createElement("div");
 
-heart.className="heart";
+heart.classList.add("heart");
 
-heart.innerHTML="❤️";
+heart.innerHTML = "❤️";
 
-heart.style.left=Math.random()*100+"vw";
+heart.style.left = Math.random()*100+"vw";
 
-heart.style.animationDuration=
+heart.style.animationDuration =
 (Math.random()*3+2)+"s";
 
 document.body.appendChild(heart);
 
 setTimeout(()=>{
-
 heart.remove();
-
 },5000);
 
 }
