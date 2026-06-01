@@ -115,3 +115,46 @@ heart.remove();
 }
 
 }
+const photos = [
+"foto1.jpg",
+"foto2.jpg",
+"foto3.jpg",
+"foto4.jpg",
+"foto5.jpg",
+"foto6.jpg",
+"foto7.jpg",
+"foto8.jpg"
+];
+
+let currentPhoto = 0;
+
+setInterval(()=>{
+
+const slider = document.getElementById("sliderImage");
+
+if(!slider) return;
+
+currentPhoto++;
+
+if(currentPhoto >= photos.length){
+currentPhoto = 0;
+}
+
+slider.src = photos[currentPhoto];
+
+},3000);
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
